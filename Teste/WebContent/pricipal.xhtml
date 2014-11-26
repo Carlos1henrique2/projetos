@@ -12,7 +12,7 @@
 	  Perfil do usuário
 	</ui:define>
 	<ui:define name="content">
-		<h:graphicImage  library="img" name="resource/imagens/teste.png" width="100" height="150" ></h:graphicImage>
+		<h:graphicImage   name="imagens/user.jpg" width="100" height="150" ></h:graphicImage>
 		<h:form enctype="multipart/form-data">
     <p:growl id="messages" showDetail="true" />
  
@@ -25,55 +25,46 @@
 
 					</h:commandButton>
 </h:form>
-                <h2>Nome</h2>
+              
 		<p>
 		
 		
 			<h:form>
-
-				<p:messages id="texto"></p:messages>
-
-				<h:panelGrid columns="2">
-				
-				<h:outputLabel for="ajax" value="Ajax:" />
-        <p:inplace id="ajax" editor="true">
-            <p:inputText value="#{inplaceView.text}" required="true" label="text" />
+    <h:panelGrid columns="2" columnClasses="column" cellpadding="5">
+    
+ 
+        <h:outputLabel for="nome" value="Nome:" />
+        <p:inplace id="nome" editor="true">
+            <p:inputText value="#{inplaceView.nome}" required="true" label="text" />
         </p:inplace>
-				
-
-					<h:outputLabel for="nome" value="Nome" />
-					<p:inplace id="neme" editor="true">
-						<p:inputText value="#{inplaceView.text}" required="true"
-							label="Ranieu" />
-					</p:inplace>
-					
-					<h:outputLabel for="email" value="Email" />
-					<p:inplace id="email" editor="true">
-						<p:inputText value="#{inplaceView.text}" required="true"
-							label="Ranieu.sousa.9@gmail.com" />
-					</p:inplace>
-					
-					<h:outputLabel for="fone" value="Telefone" />
-					<p:inplace id="Fone" editor="true">
-						<p:inputText value="#{inplaceView.text}" required="true"
-							label="(63)8110-7595" />
-					</p:inplace>
-					
-					
-					<h:outputLabel for="face" value="facebook" />
-					<p:inplace id="facebook" editor="true">
-						<p:inputText value="#{inplaceView.text}" required="true"
-							label="Ranielsousa9" />
-					</p:inplace>
-					
-					<h:outputLabel for="gmas" value="Google+" />
-					<p:inplace id="gmas" editor="true">
-						<p:inputText value="#{inplaceView.text}" required="true"
-							label="Ranieu Sousa" />
-					</p:inplace>
-
-				</h:panelGrid>
-			</h:form>
+        
+         <h:outputLabel for="email" value="Email:" />
+        <p:inplace id="Email" editor="true">
+            <p:inputText value="#{inplaceView.email}" required="true" label="text" />
+        </p:inplace>
+        
+         <h:outputLabel for="fone" value="Telefone:" />
+        <p:inplace id="fone" editor="true">
+            <p:inputText value="#{inplaceView.fone}" required="true" label="text" />
+        </p:inplace>
+        
+         <h:outputLabel for="face" value="Facebook" />
+        <p:inplace id="face" editor="true">
+            <p:inputText value="#{inplaceView.face}" required="true" label="text" />
+        </p:inplace>
+        
+         <h:outputLabel for="Gmais" value="Google+:" />
+        <p:inplace id="gmais" editor="true">
+            <p:inputText value="#{inplaceView.gmais}" required="true" label="text" />
+        </p:inplace>
+ 
+       
+ 
+        
+ 
+        
+    </h:panelGrid>
+</h:form>
 		</p>
 
 	</ui:define>

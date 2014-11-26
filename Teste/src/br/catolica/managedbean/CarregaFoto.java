@@ -22,7 +22,7 @@ public class CarregaFoto {
 	public void upload() {
 		if (foto != null) {
 			FacesMessage message = new FacesMessage("Foto carregada  com suceso ",
-					foto.getFileName() + " is uploaded.");
+					foto.getFileName() + " imagens do perfil ");
 			FacesContext.getCurrentInstance().addMessage(null, message);
 		}
 	}
