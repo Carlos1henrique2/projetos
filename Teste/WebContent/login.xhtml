@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/resources/templates/template_principal.xhtml">
+	<ui:define name="title">
+	  Login
+	</ui:define>
+	<ui:define name="content">
+		<h2>Login</h2>
+
+		<p>
+			<h:form>
+
+				<p:messages id="texto"></p:messages>
+
+				<h:panelGrid columns="2">
+
+					<h:outputLabel for="nome" value="Nome:" />
+					<p:inputText id="nome" value="#{contato.nome}" required="true">
+					</p:inputText>
+
+					<h:outputLabel for="senha" value="Senha:" />
+					<p:password id="Senha" value="#{classe}" required="true">
+					</p:password>
+
+					<h:outputText></h:outputText>
+					<h:commandButton id="entrar" action="#{classe}" value="Entrar">
+						<f:ajax event="blur" execute="enviar" action="#{classe}"></f:ajax>
+
+					</h:commandButton>
+
+				</h:panelGrid>
+				<!--  essa imagens  eu ainda  vou temina para por aqui blz -->
+				<h:panelGrid columns="3">
+
+					<h:graphicImage name="/imagens/Facebook.png" width="30" height="30"></h:graphicImage>
+					<h:graphicImage name="/imagens/Google.png" width="30" height="30"></h:graphicImage>
+					<h:graphicImage name="/imagens/Twitter.png" width="30" height="30"></h:graphicImage>
+
+				</h:panelGrid>
+			</h:form>
+		</p>
+
+	</ui:define>
+
+
+</ui:composition>
+</html>

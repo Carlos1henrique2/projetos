@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition
+	template="/resources/templates/template_principal.xhtml">
+	<ui:define name="title">
+	  Casdastrar
+	</ui:define>
+	<ui:define name="content">
+		<h2>Cadastro</h2>
+
+		<p>
+			<h:form>
+
+				<p:messages id="texto"></p:messages>
+
+				<h:panelGrid columns="2">
+
+						<h:outputLabel for="cnome" value="Nome:" />
+					<p:inputText id="cnome" value="#{contato.nome}" required="true"
+						requiredMessage="Campo obrigatório. Informe seu nome."
+						validatorMessage="Seu nome deve conter pelomenos 6 caracteres e  somente letras">
+						<f:validateLength minimum="6"></f:validateLength>
+						<f:validateRegex pattern="[a-zA-z ]+"></f:validateRegex>
+						<f:ajax event="blur" execute="cnome" render="texto"></f:ajax>
+					</p:inputText>
+
+					<h:outputLabel for="email" value="E-mail:" />
+					<p:inputText id="email" value="#{cadastro.email}" required="true"
+						requiredMessage="Por favor, informe seu email para contato."
+	    			validatorMessage="Informe um email válido.">
+	    			<f:validateRegex pattern="[a-z]+@[a-z]{3}\.[a-z]{2}"></f:validateRegex>
+					</p:inputText>
+					
+					<h:outputText value="Senha: " />
+        <p:password id="senha" value="#{passwordView.password2}" feedback="true" requiredMessage="Campo obrigatório. Informe sua senha."
+						validatorMessage="Seu nome deve conter pelomenos 6 caracteres e  somente letras" >
+						<f:validateLength minimum="6"></f:validateLength>
+						<f:validateRegex pattern="[a-zA-z ]+"></f:validateRegex>
+						<f:ajax event="blur" execute="senha" render="texto"></f:ajax>
+						</p:password>
+
+					<h:outputText></h:outputText>
+					<h:commandButton id="enviar" action="#{contato.enviar}"
+						value="Cadastrar">
+						<f:ajax event="blur" execute="enviar" action="#{contato.teste}"></f:ajax>
+
+
+					</h:commandButton>
+				</h:panelGrid>
+			</h:form>
+		</p>
+
+	</ui:define>
+
+
+</ui:composition>
+</html>
